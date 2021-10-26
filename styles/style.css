@@ -186,37 +186,41 @@ nav {
 }
 
 .slider {
-  /*margin-bottom: 100px;*/
+  margin-bottom: 100px;
   /*background-color: #e9f0fd;*/
 }
 /* SLIDER конец */
 
 /* section NEW COLLECTION */
-/* исправление clearfix для float */
-.clearfix::after {
-  display: table;
-  content: "";
-  clear: both;
-}
-
 section {
   display: block;
 }
+
 .new-collection {
   width: 1600px;
-  padding-top: 100px;
   margin-bottom: 100px;
   background-color: #e9f0fd;
 }
 
 .products-title {
   font-family: "Roboto", sans-serif;
-  text-align: center;
   font-size: 48px;
   line-height: 72px;
-  color: #515151;
   text-transform: uppercase;
-  margin: 0px 0px 106px 0px;
+  text-align: center;
+  color: #515151;
+  margin: 0px 0px 119px 0px;
+}
+
+.products-title::after {
+  content: "";
+  display: block;
+  width: 164px;
+  height: 7px;
+  background-color: #4ec6ab;
+  /* поставить полоску по центру
+  через margin: auto; */
+  margin: auto;
 }
 
 .collection-link {
@@ -225,54 +229,58 @@ section {
   line-height: 32px;
 }
 
-/* margin-right всем карточкам товара кроме 4й */
 .collection-item:not(:nth-child(4n)) {
   margin-right: 30px;
+  
 }
 
 .collection-item {
   float: left;
   display: block;
   width: 255px;
-  /*height: 322px;*/
+  height: 322px;
   list-style: none;
   line-height: 32px;
   text-transform: uppercase;
 }
 
-.product-name {
+.collection-name {
   float: left;
   display: block;
   text-align: center;
   width: 200px;
   height: 40px;
   font-family: "Roboto", sans-serif;
-  color: white;
-  background-color: #323232;
   font-size: 18px;
   font-weight: normal;
+  /* line-height: 40px; задает вертикальную позицию текста по центру,
+  так как я знаю высоту блока(40px). */
   line-height: 40px;
+  color: white;
+  background-color: #323232;
 }
 
-.product-price {
+.collection-price {
   float: right;
   display: block;
   text-align: center;
   width: 55px;
   height: 40px;
-  font-family: "Roboto", sans-serif;
   color: white;
   background-color: #8c8c8c;
   font-size: 18px;
   font-weight: normal;
+  /* line-height: 40px; задает вертикальную позицию текста по центру,
+  так как я знаю высоту блока(40px). */
   line-height: 40px;
+  font-family: "Roboto", sans-serif;
 }
 
-.card-content:hover .product-name {
+.collection-item:hover .collection-name {
   background-color: #1abc9c;
 }
 
-.card-content:hover .product-price {
+.collection-item:hover .collection-price {
   background-color: #7fd9c7;
 }
 
